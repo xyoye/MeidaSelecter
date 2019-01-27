@@ -1,5 +1,4 @@
 # MeidaSelecter
-media selecter demo
 
 使用CursorLoader加载ContentProvider中的媒体文件
 
