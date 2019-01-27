@@ -21,7 +21,8 @@ public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_VIDEO_PERMISSION = 1002;
     private String[] permissions = new String[]{
             Manifest.permission.READ_EXTERNAL_STORAGE,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.CAMERA
     };
 
     @Override
@@ -38,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.photo_select:
                 if ((ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED) ||
-                        (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED))
+                        (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED) ||
+                        (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)!= PackageManager.PERMISSION_GRANTED))
                     ActivityCompat.requestPermissions(this, permissions, REQUEST_PHOTO_PERMISSION);
                 else
                     startActivity(new Intent(this, SelectPhotoActivity.class));
@@ -57,7 +59,8 @@ public class MainActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults){
         if (requestCode == REQUEST_PHOTO_PERMISSION){
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED &&
-                    grantResults[1] == PackageManager.PERMISSION_GRANTED){
+                    grantResults[1] == PackageManager.PERMISSION_GRANTED &&
+                    grantResults[2] == PackageManager.PERMISSION_GRANTED){
                 startActivity(new Intent(this, SelectPhotoActivity.class));
             }
             return;

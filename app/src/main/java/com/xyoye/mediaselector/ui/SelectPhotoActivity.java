@@ -156,7 +156,7 @@ public class SelectPhotoActivity extends AppCompatActivity implements LoaderColl
                 return;
             }
             mCurrentPhotoPath = photoFile.getAbsolutePath();
-            Uri mCurrentPhotoUri = FileProvider.getUriForFile(context,"com.taobubao.textile.fileprovider", photoFile);
+            Uri mCurrentPhotoUri = FileProvider.getUriForFile(context,"com.xyoye.mediaselecter.fileprovider", photoFile);
             captureIntent.putExtra(MediaStore.EXTRA_OUTPUT, mCurrentPhotoUri);
             captureIntent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
