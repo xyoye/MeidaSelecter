@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="68.5dp">
+
+    <ImageView
+        android:id="@+id/album_cover"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="12dp"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:id="@+id/album_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/album_cover"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="50dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="#333333"
+        android:textSize="14sp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/album_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/album_cover"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="100dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="#999999"
+        android:textSize="12sp"
+        android:text=""/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="12dp"
+        android:src="@mipmap/ic_arrow_right"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="94dp"
+        android:background="#d8d8d8"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>
